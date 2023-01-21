@@ -4,18 +4,11 @@ pipeline {
     stages{
         stage("create zip file"){
             steps{
-                
-             sh 'zip middlewareScript-${BUILD_NUMBER}.zip *  --exclude Jenkinsfile README.md '  
-        }
-        stage("test"){
-            steps{
-                echo "test"
+               
+           sh 'zip middlewareScript-${BUILD_NUMBER}.zip *  --exclude Jenkinsfile README.md '  
+            
             }
         }
-        stage("deploy"){
-            steps{
-                echo "deploy"
-            }
-        }
+        
     }
 }
